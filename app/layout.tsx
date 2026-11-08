@@ -15,7 +15,7 @@ const dmMono = DM_Mono({
   style: ["normal", "italic"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://arshad-portfolio.vercel.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://new-portfolio-taupe-rho.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

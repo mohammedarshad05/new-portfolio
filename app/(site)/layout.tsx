@@ -3,7 +3,7 @@ import { SiteChrome } from "@/lib/components/SiteChrome";
 import { IntroCompleteProvider } from "@/lib/context/IntroCompleteContext";
 import { social } from "@/lib/data/projects";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://arshad-portfolio.vercel.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://new-portfolio-taupe-rho.vercel.app";
 
 const personJsonLd = {
   "@context": "https://schema.org",
