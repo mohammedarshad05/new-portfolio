@@ -3,7 +3,7 @@ export const RESUME_FACTS = `Mohammed Arshad, Frontend-Focused Full Stack Develo
 - Experience turning ideas and designs into functional digital experiences, writing clean and maintainable code, and creating intuitive interfaces.`;
 
 export const LINKS = {
-  GitHub: "https://github.com/mohammadarshad05",
+  GitHub: "https://github.com/mohammedarshad05",
   LinkedIn: "https://linkedin.com/in/mohammad-arshad-a5202a33b",
 };
 

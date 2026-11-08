@@ -49,7 +49,7 @@ export const toolbox = [
 ];
 
 export const social = {
-  github: "https://github.com/mohammadarshad05",
+  github: "https://github.com/mohammedarshad05",
   linkedin: "https://linkedin.com/in/mohammad-arshad-a5202a33b",
   twitter: "",
   email: "arshff005@gmail.com",
