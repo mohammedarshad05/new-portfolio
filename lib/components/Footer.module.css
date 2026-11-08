@@ -1,0 +1,28 @@
+.footer {
+  padding: 32px 16px;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footerCopy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.heart {
+  color: var(--card-orange);
+}
+
+@media (min-width: 481px) {
+  .footer {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}

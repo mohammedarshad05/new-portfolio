@@ -1,0 +1,35 @@
+.panel {
+  position: sticky;
+  z-index: 1;
+  min-height: 100vh;
+  min-height: 100lvh;
+}
+
+.fill {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--panel-bg, var(--bg));
+  will-change: transform;
+}
+
+.cap {
+  display: none;
+}
+
+.panel + .panel .cap {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 33px;
+  border-radius: 32px 32px 0 0;
+  background: var(--panel-bg, var(--bg));
+  box-shadow: 0 -12px 40px rgba(7, 8, 15, 0.12);
+}
+
+.panel + .panel .fill {
+  top: 32px;
+}
