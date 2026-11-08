@@ -65,7 +65,10 @@ export function useContactForm() {
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         {
           name: name.trim(),
+          from_name: name.trim(),
           email: email.trim(),
+          from_email: email.trim(),
+          reply_to: email.trim(),
           message: message.trim(),
         },
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
