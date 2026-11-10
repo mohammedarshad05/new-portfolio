@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { HangingTag } from "@/lib/components/HangingTag";
+import { HangingTag, ThreeHangingTag } from "@/lib/components/HangingTag";
 import { HeroIntro } from "@/lib/components/Hero/HeroIntro";
 import { StackPanel } from "@/lib/components/StackPanel";
 import { useInViewFade } from "@/lib/hooks/useInViewFade";
@@ -86,7 +86,7 @@ export function HeroAbout() {
 
       <StackPanel>
         <div className={styles.aboutHeader}>
-          <HangingTag label="About me" />
+          <ThreeHangingTag label="About me" />
           <h2 className={styles.headerTitle}>
             Meet Arshad<span className="accent-dot">.</span>
           </h2>

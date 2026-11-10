@@ -16,6 +16,7 @@ type HangingTagProps = {
   pin?: "orange" | "dark";
 };
 
+export { ThreeHangingTag } from "./ThreeHangingTag";
 export function HangingTag({ label, pin = "orange" }: HangingTagProps) {
   const ref = useRef<HTMLDivElement>(null);
   const pinRef = useRef<HTMLSpanElement>(null);
