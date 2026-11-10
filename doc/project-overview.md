@@ -39,8 +39,8 @@ My home page brings together three major sections:
    * **Avatar Frame**: Displays my profile photo (`public/avat.png`) inside an offset geometric border with spring tilt physics.
    * **About Section**:
      * Section title: **"Meet Arshad."**
-     * Story paragraphs detailing my background with React.js, Next.js, TypeScript, JavaScript, PHP, Symfony, REST APIs, and databases.
-     * **"My stack"** chips: Interactive badges displaying my core technical skills.
+     * Story paragraphs detailing my background with React.js, Next.js, TypeScript, JavaScript, custom CMS development with WordPress & ACF Pro, PHP, Symfony, REST APIs, and databases.
+     * **"My stack"** chips: Interactive badges displaying my core technical skills (including React, Next.js, TypeScript, PHP, WordPress, ACF Pro, Symfony, and Tailwind CSS).
 2. **Featured Projects Showcase (`lib/components/ProjectsShowcase/index.tsx`)**
    * A 3D interactive laptop built purely with CSS and Framer Motion.
    * As the visitor scrolls down my page, the laptop lid opens up, the screen turns on, and displays my project preview.

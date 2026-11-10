@@ -17,6 +17,8 @@ const TECHS = [
   { name: "TypeScript", icon: "TS" },
   { name: "JavaScript", icon: "JS" },
   { name: "PHP", icon: "🐘" },
+  { name: "WordPress", icon: "W" },
+  { name: "ACF Pro", icon: "⚙️" },
   { name: "Symfony", icon: "S" },
   { name: "Tailwind CSS", icon: "~" },
   { name: "REST APIs", icon: "⚡" },
@@ -131,17 +133,19 @@ export function HeroAbout() {
                 About me<span className="accent-dot">.</span>
               </h2>
               <p className={styles.aboutText}>
-                I&apos;m a Software Developer specializing in building modern,
-                responsive, and user-friendly web applications. I primarily
-                work with React.js, Next.js, TypeScript, and JavaScript, with
-                backend experience in PHP, Symfony, REST APIs, and databases.
+                I&apos;m a Full Stack Developer specializing in building modern,
+                responsive, and user-friendly web applications. I primarily work
+                with React.js, Next.js, TypeScript, and JavaScript, alongside
+                extensive experience architecting custom CMS-driven platforms
+                using PHP, WordPress, and Advanced Custom Fields (ACF Pro).
               </p>
               <p className={styles.aboutText} style={{ marginTop: "16px" }}>
-                I enjoy turning ideas and designs into functional digital
-                experiences, writing clean and maintainable code, and
-                continuously learning new technologies. I&apos;m passionate
-                about creating intuitive interfaces while understanding the
-                complete development process, from frontend to backend.
+                I bridge the gap between intuitive frontend user experiences
+                and flexible, scalable backend content systems. With backend
+                experience spanning PHP, Symfony, REST APIs, and databases, I
+                focus on modular component architectures, writing clean and
+                maintainable code without bloated page builders, and turning
+                designs into high-performance digital experiences.
               </p>
               <Link href="/contact" className={styles.moreLink}>
                 Reach out

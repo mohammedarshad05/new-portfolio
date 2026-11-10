@@ -33,6 +33,8 @@ export const skills = [
   { name: "TypeScript", icon: "🔷" },
   { name: "JavaScript", icon: "🟨" },
   { name: "PHP", icon: "🐘" },
+  { name: "WordPress", icon: "🌐" },
+  { name: "ACF Pro", icon: "⚙️" },
   { name: "Symfony", icon: "🎼" },
   { name: "Tailwind CSS", icon: "🌊" },
   { name: "REST APIs", icon: "⚡" },
@@ -42,10 +44,11 @@ export const skills = [
 
 export const toolbox = [
   { label: "Frontend Development", icon: "⬜" },
+  { label: "Custom CMS Architecture", icon: "⚙️" },
+  { label: "ACF Pro Flexible Content", icon: "🧩" },
   { label: "Responsive Design", icon: "📱" },
-  { label: "Performance Optimization", icon: "⚡" },
-  { label: "Clean Code", icon: "🧹" },
-  { label: "Problem Solving", icon: "🧠" },
+  { label: "Performance & Clean Code", icon: "⚡" },
+  { label: "Full Stack Architecture", icon: "🧠" },
 ];
 
 export const social = {

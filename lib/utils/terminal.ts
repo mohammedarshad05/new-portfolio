@@ -18,10 +18,10 @@ export const terminalCommands: Record<string, () => string[]> = {
   ],
   about: () => [
     "- Mohammed Arshad",
-    "- Frontend-Focused Full Stack Developer",
-    "- Specialization: React.js, Next.js, TypeScript, JavaScript",
-    "- Backend: PHP, Symfony, REST APIs, Databases",
-    "- Focus: Clean and maintainable code, modern responsive web applications",
+    "- Full Stack Developer",
+    "- Frontend: React.js, Next.js, TypeScript, JavaScript",
+    "- CMS & Backend: WordPress (Custom Themes & ACF Pro), PHP, Symfony, REST APIs",
+    "- Focus: Modular component architecture, clean code without page-builder bloat",
   ],
   whoami: () => [
     "You're talking to Arshad's interactive portfolio terminal.",
@@ -41,6 +41,7 @@ export const terminalCommands: Record<string, () => string[]> = {
   skills: () => [
     "- Languages: TypeScript, JavaScript, PHP",
     "- Frontend: React.js, Next.js, Tailwind CSS, HTML5, CSS3",
+    "- CMS: WordPress (Custom Theme Dev, ACF Pro Flexible Content)",
     "- Backend & APIs: PHP, Symfony, REST APIs, Node.js",
     "- Databases: MySQL, PostgreSQL, MongoDB",
     "- Tooling: Git, GitHub, Vercel",
