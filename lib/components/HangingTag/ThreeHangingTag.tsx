@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
+import styles from "./HangingTag.module.css";
 
 type ThreeHangingTagProps = {
   label: string;
@@ -51,39 +52,44 @@ function createCardTextures(label: string, isDark: boolean, maxAnisotropy = 16) 
   ctx.roundRect(pad, pad, width - pad * 2, height - pad * 2, radius);
   ctx.fill();
 
-  // Dashed border (sharp high-res vector stroke in clean white)
-  ctx.strokeStyle = "#ffffff";
+  // Dashed border (sharp high-res vector stroke in brand orange)
+  ctx.strokeStyle = "#ff5e00";
   ctx.lineWidth = 15;
   ctx.setLineDash([36, 24]);
   ctx.stroke();
 
-  // Eyelet ring at top center
+  // Eyelet at top center (matching proportion of "Let's build" card)
   ctx.setLineDash([]);
   const eyeletX = width / 2;
-  const eyeletY = pad + 70;
+  const eyeletY = pad + 95;
+  const eyeletRadius = 46; // Bold, clearly visible eyelet
+  const borderThickness = 15;
 
-  // Eyelet outer shadow / ring
+  // Eyelet dark backing hole
   ctx.fillStyle = "#07080f";
   ctx.beginPath();
-  ctx.arc(eyeletX, eyeletY, 32, 0, Math.PI * 2);
+  ctx.arc(eyeletX, eyeletY, eyeletRadius + borderThickness, 0, Math.PI * 2);
   ctx.fill();
 
-  ctx.strokeStyle = "#ffffff";
-  ctx.lineWidth = 9;
-  ctx.stroke();
-
-  // Eyelet inner hole
-  ctx.fillStyle = "#e0e2ec";
+  // White point at center
+  ctx.fillStyle = "#ffffff";
   ctx.beginPath();
-  ctx.arc(eyeletX, eyeletY, 14, 0, Math.PI * 2);
+  ctx.arc(eyeletX, eyeletY, eyeletRadius, 0, Math.PI * 2);
   ctx.fill();
+
+  // Orange rounded border around white point
+  ctx.strokeStyle = "#ff5e00";
+  ctx.lineWidth = borderThickness;
+  ctx.beginPath();
+  ctx.arc(eyeletX, eyeletY, eyeletRadius, 0, Math.PI * 2);
+  ctx.stroke();
 
   // Label text with crisp typography in bright white and larger font size
   ctx.fillStyle = "#ffffff";
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
-  ctx.font = '800 165px "Syne", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-  ctx.fillText(label, width / 2, height / 2 + 56);
+  ctx.font = '800 160px "Syne", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+  ctx.fillText(label, width / 2, height / 2 + 70);
 
   const frontTexture = new THREE.CanvasTexture(frontCanvas);
   frontTexture.colorSpace = THREE.SRGBColorSpace;
@@ -103,14 +109,14 @@ function createCardTextures(label: string, isDark: boolean, maxAnisotropy = 16) 
   bCtx.roundRect(pad, pad, width - pad * 2, height - pad * 2, radius);
   bCtx.fill();
 
-  bCtx.strokeStyle = "#ffffff";
+  bCtx.strokeStyle = "#ff5e00";
   bCtx.lineWidth = 15;
   bCtx.setLineDash([36, 24]);
   bCtx.stroke();
 
   // Back monogram
   bCtx.setLineDash([]);
-  bCtx.fillStyle = "#ffffff";
+  bCtx.fillStyle = "#ff5e00";
   bCtx.textAlign = "center";
   bCtx.textBaseline = "middle";
   bCtx.font = '800 190px "Syne", -apple-system, BlinkMacSystemFont, sans-serif';
@@ -313,7 +319,7 @@ export function ThreeHangingTag({ label, pin = "orange" }: ThreeHangingTagProps)
       const p0 = new THREE.Vector3(0, anchorY, 0.02);
 
       // Exact world position of the eyelet on the card, accounting for 3D rotation and tilt
-      const eyeletLocal = new THREE.Vector3(0, cardH / 2 - 0.02, 0.015);
+      const eyeletLocal = new THREE.Vector3(0, 0.41, 0.02);
       eyeletLocal.applyMatrix4(cardMesh.matrixWorld);
       const p2 = eyeletLocal;
 
@@ -573,15 +579,17 @@ export function ThreeHangingTag({ label, pin = "orange" }: ThreeHangingTagProps)
         overflow: "visible",
       }}
     >
-      <div
-        ref={mountRef}
-        style={{
-          width: 280,
-          height: 300,
-          margin: "-60px 0 -95px -40px",
-          pointerEvents: "auto",
-        }}
-      />
+      <div className={styles.cast}>
+        <div
+          ref={mountRef}
+          style={{
+            width: 280,
+            height: 300,
+            margin: "-60px 0 -95px -40px",
+            pointerEvents: "auto",
+          }}
+        />
+      </div>
     </div>
   );
 }
