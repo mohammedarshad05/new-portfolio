@@ -110,7 +110,7 @@ export function HeroAbout() {
             />
             <div className={styles.cardMat}>
               <Image
-                src="/avat.png"
+                src="/avat-cutout.png"
                 alt="Mohammed Arshad"
                 width={448}
                 height={594}
