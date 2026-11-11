@@ -434,13 +434,22 @@ export function ThreeHangingTag({ label, pin = "orange" }: ThreeHangingTagProps)
       window.addEventListener("touchend", onTouchEnd);
 
       let lastScroll = window.scrollY;
+      let lastScrollKick = 0;
       const onScroll = () => {
         const delta = window.scrollY - lastScroll;
         lastScroll = window.scrollY;
-        if (!isDragging && Math.abs(delta) > 2) {
-          vel.x += Math.max(-2.2, Math.min(2.2, -delta * 0.07));
-          rotVel.z += Math.max(-2.8, Math.min(2.8, -delta * 0.12));
-        }
+        const now = performance.now();
+        if (isDragging || Math.abs(delta) < 2 || now - lastScrollKick < 45) return;
+        lastScrollKick = now;
+
+        // Balanced medium-fast sway impulse with safe velocity caps
+        const impulseX = Math.max(-1.4, Math.min(1.4, -delta * 0.035));
+        const impulseRot = Math.max(-1.8, Math.min(1.8, -delta * 0.055));
+        const impulseY = Math.max(-0.5, Math.min(0.5, delta * 0.012));
+
+        vel.x = Math.max(-4.2, Math.min(4.2, vel.x + impulseX));
+        vel.y = Math.max(-1.8, Math.min(1.8, vel.y + impulseY));
+        rotVel.z = Math.max(-5.0, Math.min(5.0, rotVel.z + impulseRot));
       };
       window.addEventListener("scroll", onScroll, { passive: true });
 
@@ -454,8 +463,8 @@ export function ThreeHangingTag({ label, pin = "orange" }: ThreeHangingTagProps)
         lastTime = now;
 
         if (!isDragging) {
-          const springK = 92;
-          const damping = 7.8;
+          const springK = 80;
+          const damping = 7.4;
 
           const fx = -springK * pos.x - damping * vel.x;
           const fy = -springK * (pos.y - restY) - damping * vel.y;
@@ -469,8 +478,8 @@ export function ThreeHangingTag({ label, pin = "orange" }: ThreeHangingTagProps)
           pos.y += vel.y * dt;
           pos.z += vel.z * dt;
 
-          const rotK = 100;
-          const rotD = 8.2;
+          const rotK = 85;
+          const rotD = 7.8;
           const targetRotZ = -0.09;
 
           const rfx = -rotK * rot.x - rotD * rotVel.x;
