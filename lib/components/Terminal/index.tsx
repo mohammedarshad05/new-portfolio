@@ -7,7 +7,7 @@ import { TerminalWindow } from "./TerminalWindow";
 import { ServicesCard } from "./ServicesCard";
 import { ProcessSteps } from "./ProcessSteps";
 import { ContactCta } from "./ContactCta";
-import { HangingTag } from "@/lib/components/HangingTag";
+import { ThreeHangingTag } from "@/lib/components/HangingTag";
 import { useInViewFade } from "@/lib/hooks/useInViewFade";
 import styles from "./Terminal.module.css";
 
@@ -24,7 +24,7 @@ export function Terminal() {
   return (
     <section id="terminal" className={styles.terminalSection}>
       <div className={styles.terminalInner}>
-        <HangingTag label="Let's build" />
+        <ThreeHangingTag label="Let's build" />
         <h2 className={styles.sectionTitle}>
           Work with me<span className="accent-dot">.</span>
         </h2>

@@ -10,7 +10,7 @@ import {
   useMotionValueEvent,
   useTransform,
 } from "framer-motion";
-import { HangingTag } from "@/lib/components/HangingTag";
+import { ThreeHangingTag } from "@/lib/components/HangingTag";
 import { projects } from "@/lib/data/projects";
 import { largeViewportHeight } from "@/lib/utils/viewport";
 import styles from "./ProjectsShowcase.module.css";
@@ -112,7 +112,7 @@ export function ProjectsShowcase() {
     <section id="projects" ref={scrubRef} className={styles.scrub}>
       <div className={styles.stage}>
         <div className={styles.head}>
-          <HangingTag label="Featured Projects" pin="dark" />
+          <ThreeHangingTag label="Featured Projects" pin="dark" />
           <h2 className={styles.title}>
             Things I&apos;ve built<span className="accent-dot">.</span>
           </h2>
