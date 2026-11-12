@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Projects } from "@/lib/components/Projects";
+import { ProfessionalExperience } from "@/lib/components/ProfessionalExperience";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -10,10 +11,13 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <Projects
-      label="All Projects"
-      title="Project archive"
-      intro="A deeper look at shipped products, experiments, and frontend builds."
-    />
+    <>
+      <Projects
+        label="All Projects"
+        title="Project archive"
+        intro="A deeper look at shipped products, experiments, and frontend builds."
+      />
+      <ProfessionalExperience />
+    </>
   );
 }

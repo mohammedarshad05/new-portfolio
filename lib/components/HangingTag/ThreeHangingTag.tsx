@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import styles from "./HangingTag.module.css";
 
@@ -114,14 +114,9 @@ function createCardTextures(label: string, isDark: boolean, maxAnisotropy = 16) 
 
 export function ThreeHangingTag({ label, pin = "orange" }: ThreeHangingTagProps) {
   const mountRef = useRef<HTMLDivElement>(null);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted || !mountRef.current) return;
+    if (!mountRef.current) return;
 
     let destroyed = false;
     let cleanupScene: (() => void) | null = null;
@@ -541,7 +536,7 @@ export function ThreeHangingTag({ label, pin = "orange" }: ThreeHangingTagProps)
       destroyed = true;
       if (cleanupScene) cleanupScene();
     };
-  }, [label, pin, mounted]);
+  }, [label, pin]);
 
   return (
     <div

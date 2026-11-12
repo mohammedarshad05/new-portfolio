@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { HangingTag, ThreeHangingTag } from "@/lib/components/HangingTag";
+import { ThreeHangingTag } from "@/lib/components/HangingTag";
 import { HeroIntro } from "@/lib/components/Hero/HeroIntro";
 import { StackPanel } from "@/lib/components/StackPanel";
 import { useInViewFade } from "@/lib/hooks/useInViewFade";
