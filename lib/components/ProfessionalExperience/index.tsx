@@ -1,5 +1,5 @@
 import { clientProjects } from "@/lib/data/experience";
-import { ThreeHangingTag } from "@/lib/components/HangingTag";
+// import { ThreeHangingTag } from "@/lib/components/HangingTag";
 import { ExperienceCard } from "./ExperienceCard";
 
 const RISE_STAGGER = 0.15;
@@ -20,7 +20,7 @@ export function ProfessionalExperience() {
     >
       <div className="mx-auto max-w-[1440px]">
         <div className="mb-[48px]">
-          <ThreeHangingTag label="Professional Experience" />
+          {/* <ThreeHangingTag label="Professional Experience" /> */}
           <div className="mt-[12px] flex flex-wrap items-end justify-between gap-[16px]">
             <div>
               <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.02em] text-[var(--text)]">

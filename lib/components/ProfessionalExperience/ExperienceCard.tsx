@@ -43,7 +43,7 @@ export function ExperienceCard({ project, riseDelay, separateDelay }: Props) {
         </div>
 
         <div className="flex flex-col">
-          <div className="relative mt-[16px] aspect-video overflow-hidden rounded-[12px] border border-[#07080f]/10 bg-[var(--bg-2)]">
+          <div className="relative aspect-video overflow-hidden rounded-[12px] border border-[#07080f]/10 bg-[var(--bg-2)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={project.image}
