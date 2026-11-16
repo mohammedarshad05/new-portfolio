@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { HeroAbout } from "@/lib/components/HeroAbout";
 import { ProjectsShowcase } from "@/lib/components/ProjectsShowcase";
+import { CareerTimeline } from "@/lib/components/CareerTimeline";
 import { StackPanel } from "@/lib/components/StackPanel";
 import { Terminal } from "@/lib/components/Terminal";
 
@@ -19,8 +20,12 @@ export default function Home() {
         <ProjectsShowcase />
       </StackPanel>
       <StackPanel>
+        <CareerTimeline />
+      </StackPanel>
+      <StackPanel>
         <Terminal />
       </StackPanel>
     </>
   );
 }
+
